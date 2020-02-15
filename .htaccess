@@ -14,4 +14,4 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-Redirect /index.html /
+Redirect /index.html http://social.demomaker.net/

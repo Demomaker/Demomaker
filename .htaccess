@@ -13,7 +13,4 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 # Here we actually show the page that has the .html extension
 
 RewriteRule ^(.*)$ $1.html [NC,L]
-
-Options +FollowSymLinks
-RewriteCond %{THE_REQUEST} ^./index.html
-RewriteRule ^(.)index.html$ http://social.demomaker.net/$1 [R=301,L]
+RewriteRule ^(index)$ /

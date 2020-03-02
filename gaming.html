@@ -75,49 +75,6 @@
 					convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p-->
 				<h1> Watch videos from my gaming youtube channel : </h1>
 				<iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=DemomakerMinecraftYT" width="480" height="400"></iframe>
-				<!--Youtube API Key : AIzaSyDg_DO85jQeKAkWSwNciw2_oHevcSJIj0E-->
-				<?php
-				class YouTube
-				{
-					const       DEV_KEY = 'AIzaSyDg_DO85jQeKAkWSwNciw2_oHevcSJIj0E';
-					private     $client;
-					private     $youtube;
-					private     $lastChannel;
-
-					public function __construct()
-					{
-						$this->client = new Google_Client();
-						$this->client->setDeveloperKey(self::DEV_KEY);
-						$this->youtube = new Google_Service_YouTube($this->client);
-						$this->lastChannel = false;
-					}
-
-					public function getChannelInfoFromName($channel_name)
-					{
-						if ($this->lastChannel && $this->lastChannel['modelData']['items'][0]['snippet']['title'] == $channel_name) {
-							return $this->lastChannel;
-						}
-						$this->lastChannel = $this->youtube->channels->listChannels('snippet, contentDetails, statistics', array(
-							'forUsername' => $channel_name,
-						));
-						return ($this->lastChannel);
-					}
-
-					public function getVideosFromChannelName($channel_name, $max_result = 5)
-					{
-						$this->getChannelInfoFromName($channel_name);
-						$params = [
-							'playlistId' => $this->lastChannel['modelData']['items'][0]['contentDetails']['relatedPlaylists']['uploads'],
-							'maxResults' => $max_result,
-						];
-						return ($this->youtube->playlistItems->listPlaylistItems('snippet,contentDetails', $params));
-					}
-				}
-
-				$yt = new YouTube();
-				echo '<pre>' . print_r($yt->getVideosFromChannelName('DemomakerMinecraftYT'), true) . '</pre>';
-				?>
-
 			</div>
 		</div>
 

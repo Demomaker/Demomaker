@@ -11,8 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon"
-		href="https://user-images.githubusercontent.com/18319764/74090572-e8c65900-4a7a-11ea-879d-c4dbe442084e.png">
+	<link rel="icon" href="https://user-images.githubusercontent.com/18319764/74090572-e8c65900-4a7a-11ea-879d-c4dbe442084e.png">
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -27,8 +26,7 @@
 
 				<!-- Logo -->
 				<a href="http://social.demomaker.net" class="logo">
-					<span class="symbol"><img src="images/Demomakerlogo.svg" alt="" /></span><span
-						class="title">Demomaker</span>
+					<span class="symbol"><img src="images/Demomakerlogo.svg" alt="" /></span><span class="title">Demomaker</span>
 				</a>
 
 				<!-- Nav -->
@@ -76,8 +74,49 @@
 					leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum
 					convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p-->
 				<h1> Watch videos from my gaming youtube channel : </h1>
-				<iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=DemomakerMinecraftYT" width="480"
-					height="400"></iframe>
+				<iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=DemomakerMinecraftYT" width="480" height="400"></iframe>
+				<!--Youtube API Key : AIzaSyDg_DO85jQeKAkWSwNciw2_oHevcSJIj0E-->
+				<?php
+				class YouTube
+				{
+					const       DEV_KEY = 'AIzaSyDg_DO85jQeKAkWSwNciw2_oHevcSJIj0E';
+					private     $client;
+					private     $youtube;
+					private     $lastChannel;
+
+					public function __construct()
+					{
+						$this->client = new Google_Client();
+						$this->client->setDeveloperKey(self::DEV_KEY);
+						$this->youtube = new Google_Service_YouTube($this->client);
+						$this->lastChannel = false;
+					}
+
+					public function getChannelInfoFromName($channel_name)
+					{
+						if ($this->lastChannel && $this->lastChannel['modelData']['items'][0]['snippet']['title'] == $channel_name) {
+							return $this->lastChannel;
+						}
+						$this->lastChannel = $this->youtube->channels->listChannels('snippet, contentDetails, statistics', array(
+							'forUsername' => $channel_name,
+						));
+						return ($this->lastChannel);
+					}
+
+					public function getVideosFromChannelName($channel_name, $max_result = 5)
+					{
+						$this->getChannelInfoFromName($channel_name);
+						$params = [
+							'playlistId' => $this->lastChannel['modelData']['items'][0]['contentDetails']['relatedPlaylists']['uploads'],
+							'maxResults' => $max_result,
+						];
+						return ($this->youtube->playlistItems->listPlaylistItems('snippet,contentDetails', $params));
+					}
+				}
+
+				$yt = new YouTube();
+				echo '<pre>' . print_r($yt->getVideosFromChannelName('DemomakerMinecraftYT'), true) . '</pre>';
+				?>
 
 			</div>
 		</div>
@@ -88,22 +127,18 @@
 				<section>
 					<h2>Follow</h2>
 					<ul class="icons">
-						<li><a href="https://www.demomaker.net/twitter" class="icon brands style2 fa-twitter"><span
-									class="label">Twitter</span></a></li>
-						<li><a href="https://www.demomaker.net/youtube" class="icon brands style2 fa-youtube"><span
-									class="label">Youtube</span></a></li>
-						<li><a href="https://www.demomaker.net/spotify" class="icon brands style2 fa-spotify"><span
-									class="label">Spotify</span></a></li>
-						<li><a href="https://www.demomaker.net/soundcloud"
-								class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
-						<li><a href="https://www.demomaker.net/github" class="icon brands style2 fa-github"><span
-									class="label">GitHub</span></a></li>
+						<li><a href="https://www.demomaker.net/twitter" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.demomaker.net/youtube" class="icon brands style2 fa-youtube"><span class="label">Youtube</span></a></li>
+						<li><a href="https://www.demomaker.net/spotify" class="icon brands style2 fa-spotify"><span class="label">Spotify</span></a></li>
+						<li><a href="https://www.demomaker.net/soundcloud" class="icon brands style2 fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+						<li><a href="https://www.demomaker.net/github" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
-					
+
 					<h2> Also keep up-to-date with my twitter feed : </h2>
-					<a class="twitter-timeline" href="https://twitter.com/DemomakerMC?ref_src=twsrc%5Etfw">Tweets by
-						DemomakerMC</a>
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a class="twitter-timeline" href="https://twitter.com/DemomakerMC" data-width="300" data-height="300">
+						Tweets by @DemomakerMC
+					</a>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</section>
 				<ul class="copyright">
 					<li>&copy; Demomaker. All rights reserved</li>

@@ -10,6 +10,8 @@ Compétences / Skills: Java / C# / C++ / Javascript / Python
 - 🌱 Je suis en train d'étudier en Informatique à l'Université Laval. / I’m currently learning many elements of Computer Science at Université Laval. 
 - 👯 Je cherche à collaborer à des projets de petite ou moyenne taille. / I’m looking to collaborate on small to medium size projects. 
 
+[Téléchargez mes projets les plus importants / Download my most important projects](https://demomaker.github.io/GitHubRepoDownloader/?repo=https%3A%2F%2Fgithub.com%2FDemomaker%2FGitHubRepoDownloader%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FDAG%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FSimpleCalculatorElectronJS%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FM-r-k%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FLevelCreator%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FOffline-Video-Library%2Bhttps%3A%2F%2Fgithub.com%2FDemomaker%2FTalesOfBlemblemia)
+
 Mon site web / My Website :
 
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='40'>](https://social.demomaker.net)  

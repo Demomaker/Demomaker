@@ -6,7 +6,7 @@ Je produis de la musique, des vidéos de jeux vidéos et des vidéos sur l'infor
 
 Compétences / Skills: Java / C# / C++ / Javascript / Python
 
-- 🔭 Je suis en train de travailler sur un projet qui générerait un réseau de Bus à un endroit qui en n'a pas déjà / I’m currently working on BusNetworkGenerator, an app to generate bus networks. 
+- 🔭 Je suis en train de travailler sur un projet qui permettrait de mieux gérer sa carrière / I’m currently working on Joble, an app to make managing your career easier. 
 - 🌱 Je suis en train d'étudier en Informatique à l'Université Laval. / I’m currently learning many elements of Computer Science at Université Laval. 
 - 👯 Je cherche à collaborer à des projets de petite ou moyenne taille. / I’m looking to collaborate on small to medium size projects. 
 
@@ -39,6 +39,9 @@ Mon Twitter / My Twitter :
 Mon Soundcloud / My Soundcloud :
 
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/soundcloud.svg' alt='soundcloud' height='40'>](https://www.soundcloud.com/Demomaker) 
+
+Mon Spotify / My Spotify :
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/spotify.svg' alt='spotify' height='40'>](https://open.spotify.com/artist/5e5vTdMBl20CuMRhcQSLPz)
 
 
 

@@ -41,6 +41,7 @@ Mon Soundcloud / My Soundcloud :
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/soundcloud.svg' alt='soundcloud' height='40'>](https://www.soundcloud.com/Demomaker) 
 
 Mon Spotify / My Spotify :
+
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/spotify.svg' alt='spotify' height='40'>](https://open.spotify.com/artist/5e5vTdMBl20CuMRhcQSLPz)
 
 

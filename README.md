@@ -1,4 +1,4 @@
-### Bonjour, Je suis Demomaker (Mike Bédard) / Hi there 👋, I'm Demomaker
+### Bonjour, Je suis Demomaker / Hi there 👋, I'm Demomaker
 #### Je fais des projets dans mes temps libres / I make cool projects in my spare time
 ![I make cool projects in my spare time](https://user-images.githubusercontent.com/18319764/98472266-fa7e8d80-21bf-11eb-87c0-81f1076a323b.png)
 
